@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+//styleing
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle, theme, Center, FlexStyle } from "./styles";
+//components
+import AddMovie from "./components/AddMovie";
+import Watched from "./components/Watched";
+import WatchList from "./components/WatchList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Center>
+        <h1>Movie Watchlist</h1>
+      </Center>
+      <div>
+        <div>
+          <AddMovie />
+        </div>
+
+        <FlexStyle>
+          <WatchList />
+          <Watched />
+        </FlexStyle>
+
+        <h2>تم بحمد الله </h2>
+      </div>
+    </ThemeProvider>
   );
 }
 
